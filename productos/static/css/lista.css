@@ -1,0 +1,200 @@
+:root {
+    --color-primario: #4f46e5;
+    --color-primario-oscuro: #4338ca;
+    --color-peligro: #dc2626;
+    --color-peligro-oscuro: #b91c1c;
+    --color-fondo: #f3f4f6;
+    --color-tarjeta: #ffffff;
+    --color-texto: #1f2937;
+    --color-suave: #6b7280;
+    --color-borde: #e5e7eb;
+    --radio: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Encabezado */
+.encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Mensajes de Django */
+.mensajes {
+    margin-bottom: 1.25rem;
+}
+
+.mensaje {
+    margin: 0 0 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radio);
+    font-size: 0.95rem;
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.mensaje.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.mensaje.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.mensaje.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Cuadrícula de productos */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.producto {
+    background: var(--color-tarjeta);
+    padding: 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.producto h2 {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    word-break: break-word;
+}
+
+.dato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 0.95rem;
+}
+
+.dato span {
+    color: var(--color-suave);
+}
+
+/* Acciones */
+.acciones {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.acciones form {
+    flex: 1;
+    margin: 0;
+}
+
+/* Botones y enlaces con forma de botón */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radio);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.acciones > .btn {
+    flex: 1;
+}
+
+.btn-primario {
+    width: auto;
+    color: #fff;
+    background: var(--color-primario);
+}
+
+.btn-primario:hover {
+    background: var(--color-primario-oscuro);
+}
+
+.btn-editar {
+    color: var(--color-primario);
+    background: #eef2ff;
+}
+
+.btn-editar:hover {
+    background: #e0e7ff;
+}
+
+.btn-eliminar {
+    color: var(--color-peligro);
+    background: #fef2f2;
+}
+
+.btn-eliminar:hover {
+    color: #fff;
+    background: var(--color-peligro);
+}
+
+/* Sin productos */
+.vacio {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--color-suave);
+    background: var(--color-tarjeta);
+    border-radius: 16px;
+}
+
+@media (max-width: 480px) {
+    .encabezado {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .btn-primario {
+        width: 100%;
+    }
+}
