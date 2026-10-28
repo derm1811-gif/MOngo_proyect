@@ -42,6 +42,11 @@
                             <strong>{{ producto.cantidad }}</strong>
                         </p>
 
+                        <p class="dato">
+                            <span>Categoria</span>
+                            <strong>{{ producto.categoria }}</strong>
+                        </p>
+
                         <div class="acciones">
                             <a class="btn btn-editar" href="{% url 'productos:editar' producto.id %}">
                                 Editar

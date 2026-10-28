@@ -68,6 +68,18 @@
                         required
                     >
                 </div>
+
+                <div class="campo">
+                <label for="nombre">categoria</label>
+                <input
+                    id="categoria"
+                    type="text"
+                    name="categoria"
+                    maxlength="100"
+                    value="{{ producto.categoria|default:'' }}"
+                    required
+                >
+            </div>
             </div>
 
             <button type="submit" class="btn">Guardar producto</button>

@@ -17,6 +17,7 @@ def validar_producto(datos):
     nombre = datos.get("nombre", "").strip()
     precio_texto = datos.get("precio", "").strip()
     cantidad_texto = datos.get("cantidad", "").strip()
+    categoria= datos.get("categoria","").strip()
 
     errores = []
 
@@ -49,6 +50,7 @@ def validar_producto(datos):
         "nombre": nombre,
         "precio": precio,
         "cantidad": cantidad,
+        "categoria":categoria,
     }
 
     return producto, errores
